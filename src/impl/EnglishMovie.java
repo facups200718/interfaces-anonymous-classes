@@ -1,4 +1,13 @@
+package impl;
+
+import interfaces.Movie;
+import lombok.AllArgsConstructor;
+@AllArgsConstructor
 public class EnglishMovie implements Movie {
+    private String name;
+    private String director;
+    private Float rating;
+
     @Override
     public String getName() {
         return null;
@@ -11,6 +20,6 @@ public class EnglishMovie implements Movie {
 
     @Override
     public Float getRating() {
-        return null;
+        return 0f;
     }
 }
