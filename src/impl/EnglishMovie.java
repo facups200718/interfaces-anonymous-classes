@@ -10,16 +10,14 @@ public class EnglishMovie implements Movie {
 
     @Override
     public String getName() {
-        return null;
+        return this.name;
     }
 
     @Override
-    public String getDirector() {
-        return null;
-    }
+    public String getDirector() { return this.director; }
 
     @Override
     public Float getRating() {
-        return 0f;
+        return this.rating;
     }
 }
