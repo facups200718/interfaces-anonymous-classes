@@ -63,19 +63,23 @@ public class AnonymousApp {
         displayMovie(cars3);
 
         Book harryPotter3 = new Book() {
+            String title = "The Prisoner of Azkaban";
+            String author = "JK Rowling";
+            String publisher = "Scholastic";
+
             @Override
             public String getTitle() {
-                return "The Prisoner of Azkaban";
+                return this.title;
             }
 
             @Override
             public String getAuthor() {
-                return "JK Rowling";
+                return this.author;
             }
 
             @Override
             public String getPublisher() {
-                return "Scholastic";
+                return this.publisher;
             }
 
             @Override
@@ -84,11 +88,50 @@ public class AnonymousApp {
                         getTitle(), getAuthor(), getPublisher());
             }
         };
+
+        System.out.println("harryPotter3.getClass() = " + harryPotter3.getClass());
+        displayBook(harryPotter3);
+
+        //Podemos setear desde afuera de la clase! Sirve para probar cosas las implementaciones anonimas de las interfaces
+        //Se supone que deben ser "final", pero no le importa a java porque no esta habiendo ninguna reasignacion despues
+        //Si hubiese una reasignacion, tiraria un error de compilacion
+        String title = "Harry Potter and the Goblet of Fire";
+        String author = "JK Rowling";
+        String publisher = "Scholastic";
+        Book harryPotter4 = new Book() {
+            @Override
+            public String getTitle() {
+                return title;
+            }
+
+            @Override
+            public String getAuthor() {
+                return author;
+            }
+
+            @Override
+            public String getPublisher() {
+                return publisher;
+            }
+
+            @Override
+            public String toString() {
+                return String.format("Title: %s, Author: %s, Publisher: %s",
+                        getTitle(), getAuthor(), getPublisher());
+            }
+        };
+        displayBook(harryPotter4);
     }
     
     private static void displayMovie(Movie movie) {
         System.out.println("-------------------------------------------------------");
         System.out.println("movie = " + movie);
+        System.out.println("-------------------------------------------------------");
+    }
+
+    private static void displayBook(Book book) {
+        System.out.println("-------------------------------------------------------");
+        System.out.println("movie = " + book);
         System.out.println("-------------------------------------------------------");
     }
 }
