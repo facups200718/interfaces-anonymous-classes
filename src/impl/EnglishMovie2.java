@@ -1,9 +1,7 @@
 package impl;
 
 import abstractClasses.UnreleasedMovie;
-import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
 public class EnglishMovie2 extends UnreleasedMovie {
     private Float rating;
     private String releaseDate;
